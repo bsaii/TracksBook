@@ -1,10 +1,7 @@
 import React from 'react';
 
 const Playlist = ({ tracks }) => {
-    
-    if (!tracks) {
-        return null
-    }
+
     return (
       <div className="p-6 sm:p-20 lg:p-40 bg-richBlack text-gray-200">
             
