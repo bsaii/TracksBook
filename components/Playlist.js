@@ -1,13 +1,12 @@
 import React from 'react';
 
 const Playlist = ({ tracks }) => {
-    const trackss = tracks
 
     return (
       <div className="p-6 sm:p-20 lg:p-40 bg-richBlack text-gray-200">
             
                 {
-                trackss.map((track, index) => (
+                tracks.map((track, index) => (
                     <div key={index} className="flex p-4 hover:border-r-4 border-green-400 w-full h-auto bg-dcBlue mb-4 rounded-md sm:h-28 lg:h-36">        
                     {/* img */}
                     <div className="w-4/12">
