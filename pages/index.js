@@ -5,13 +5,16 @@ import Title from '../components/Title'
 
 //fetching the data
 export const getStaticProps = async () => {
-  const res = await fetch('https://unsa-unofficial-spotify-api.p.rapidapi.com/search?query=a&count=50&type=tracks', {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-host": "unsa-unofficial-spotify-api.p.rapidapi.com",
-      "x-rapidapi-key": "9b1b120682mshb65f7ec7a720ed3p107235jsnf9fc3aa6abd2"
+  const res = await fetch(
+    "https://unsa-unofficial-spotify-api.p.rapidapi.com/search?query=a&count=50&type=tracks",
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": process.env.RAPIDAPI_HOST,
+        "x-rapidapi-key": process.env.RAPIDAPI_KEY,
+      },
     }
-  });
+  );
   const data = await res.json();
 
   if (!data) {

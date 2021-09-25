@@ -8,16 +8,14 @@ const Title = ({setTracks}) => {
 
     const getByQuery = async (search) => {
         const req = await fetch(
-            `https://unsa-unofficial-spotify-api.p.rapidapi.com/search?query=${search}&count=50&type=tracks`,
-            {
-                method: "GET",
-                headers: {
-                    "x-rapidapi-host":
-                        "unsa-unofficial-spotify-api.p.rapidapi.com",
-                    "x-rapidapi-key":
-                        "9b1b120682mshb65f7ec7a720ed3p107235jsnf9fc3aa6abd2",
-                },
-            }
+          `https://unsa-unofficial-spotify-api.p.rapidapi.com/search?query=${search}&count=50&type=tracks`,
+          {
+            method: "GET",
+            headers: {
+              "x-rapidapi-host": process.env.RAPIDAPI_HOST,
+              "x-rapidapi-key": process.env.RAPIDAPI_KEY,
+            },
+          }
         );
         const res = await req.json();
         return res.Results
