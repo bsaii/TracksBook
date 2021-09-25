@@ -37,7 +37,7 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className='box-border'>
         <Title setTracks={ setTracks } />
         <Playlist tracks={ tracks } />
       </main>

@@ -16,7 +16,7 @@ const Playlist = ({ tracks }) => {
 
                     {/* track and artists */}
                     <div className="w-6/12 ml-4 ">
-                            <h2 className='font-display font-medium text-base truncate lg:text-4xl'>{ track.name }</h2>
+                            <h2 className='font-display font-medium text-base truncate lg:text-2xl'>{ track.name }</h2>
                             <p className="block font-body font-extralight text-xs lg:text-sm">{ track.artists[0].name }</p>
                     </div>
 

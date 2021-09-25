@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["Rubik"],
-        body: ["Open Sans"],
+        display: ["Yaldevi"],
+        body: ["Abel"],
       },
       colors: {
         richBlack: "#05080F",
