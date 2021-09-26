@@ -1,24 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const Title = ({setTracks}) => {
 
     const [query, setQuery] = useState('');
     const [loading, setLoading] = useState(false);
-    const [noSearch, setNoSearch] = useState(false)
+    const [noSearch, setNoSearch] = useState(false);
 
+    //fetching the data and updating the search term
     const getByQuery = async (search) => {
-        const req = await fetch(
-          `https://unsa-unofficial-spotify-api.p.rapidapi.com/search?query=${search}&count=50&type=tracks`,
-          {
-            method: "GET",
-            headers: {
-              "x-rapidapi-host": process.env.RAPIDAPI_HOST,
-              "x-rapidapi-key": process.env.RAPIDAPI_KEY,
-            },
-          }
-        );
+        try {
+           const req = await fetch(
+             `https://unsa-unofficial-spotify-api.p.rapidapi.com/search?query=${search}&count=50&type=tracks`,
+             {
+               method: "GET",
+               headers: {
+                 "x-rapidapi-host":
+                   "unsa-unofficial-spotify-api.p.rapidapi.com",
+                 "x-rapidapi-key":
+                   "9b1b120682mshb65f7ec7a720ed3p107235jsnf9fc3aa6abd2",
+               },
+             }
+           );
         const res = await req.json();
-        return res.Results
+        return res.Results  
+        } catch (error) {
+            console.log(error)
+        } 
     };
         
 
@@ -31,8 +38,8 @@ const Title = ({setTracks}) => {
             setLoading(true);
             const data = await getByQuery(query);
             await setTracks(data);
-            setQuery('');
             setLoading(false);
+            setQuery('');
         }
     }
 
@@ -44,13 +51,13 @@ const Title = ({setTracks}) => {
             Tracks Book
           </h1>
           <p className="font-body text-base text-center sm:text-left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Search and listen to songs from your favourite artists or album.
           </p>
         </div>
 
         {/* The Search Bar */}
         <div>
-            <form className='flex justify-center items-center mb-10' onSubmit={handleSubmit}>
+            <form className='flex justify-center items-center mb-10 sm:w-80' onSubmit={handleSubmit}>
             <input
             type="text"
             value={query}        
