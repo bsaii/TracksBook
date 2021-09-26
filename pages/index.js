@@ -10,8 +10,8 @@ export const getStaticProps = async () => {
     {
       method: "GET",
       headers: {
-        "x-rapidapi-host": process.env.RAPIDAPI_HOST,
-        "x-rapidapi-key": process.env.RAPIDAPI_KEY,
+        "x-rapidapi-host": "unsa-unofficial-spotify-api.p.rapidapi.com",
+        "x-rapidapi-key": "9b1b120682mshb65f7ec7a720ed3p107235jsnf9fc3aa6abd2",
       },
     }
   );
